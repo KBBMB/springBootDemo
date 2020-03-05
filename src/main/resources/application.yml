@@ -1,0 +1,30 @@
+# 内置Tomcat配置
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+    max-http-post-size: -1
+  connection-timeout: 5000ms
+  port: 8080
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        http-only: true
+spring:
+  datasource:    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+# mybatis 别名扫描
+mybatis:
+  #mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.it.pojo
+  
+# showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
